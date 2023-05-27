@@ -1,12 +1,11 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { Handler } from "@/handler";
 
 type ResponseData = {
   message: string;
 };
 
-export default function handler(
-  req: NextApiRequest,
-  res: NextApiResponse<ResponseData>
-) {
+const handler: Handler<ResponseData> = (req, res) => {
   res.status(200).json({ message: "Hello from Next.js!" });
-}
+};
+
+export default handler;
